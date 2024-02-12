@@ -14,6 +14,7 @@ const AddStudentModal = ({ modalIsOpen, closeModal, handleAddStudent }) => {
   const [gradeLevel, setGradeLevel] = useState('');
   const [strand, setStrand] = useState('');
   const [contactNumber, setContactNumber] = useState('');
+  const [section, setSection] = useState('');
 
   const handleSubmit = async () => {
     const newStudent = {
@@ -24,6 +25,7 @@ const AddStudentModal = ({ modalIsOpen, closeModal, handleAddStudent }) => {
       gender,
       gradeLevel,
       strand,
+      section,
       contactNumber,
     };
 
@@ -111,6 +113,48 @@ const AddStudentModal = ({ modalIsOpen, closeModal, handleAddStudent }) => {
             <option value="ABM">ABM</option>
           </Form.Select>
         </Form.Group>
+
+        <Form.Group controlId='formSection'>
+          <Form.Label>Section</Form.Label>
+          <Form.Select
+                className='mb-2'
+                value={section}
+                onChange={(e) => setSection(e.target.value)}>
+                <option>Select a Section</option>
+                <optgroup label="Grade 11 STEM">
+                  <option value="St. Augustine">St. Augustine</option>
+                  <option value="St. Dominic">St. Dominic</option>
+                  <option value="St. Ignatius of Loyola">St. Ignatius of Loyola</option>
+                  <option value="St. John Vianney">St. John Vianney</option>
+                  <option value="St. Matthew">St. Matthew</option>
+                  <option value="St. Paul">St. Paul</option>
+                </optgroup>
+                <optgroup label="Grade 11 HUMSS">
+                  <option value="St. Francis of Assisi">St. Francis of Assisi</option>
+                  <option value="St. Francis Xavier">St. Francis Xavier</option>
+                </optgroup>
+                <optgroup label="Grade 11 ABM">
+                  <option value="St. Thomas Aquinas">St. Thomas Aquinas</option>
+                  <option value="St. Elizabeth">St. Elizabeth</option>
+                  <option value="St. Therese of the Child Jesus">St. Therese of the Child Jesus</option>
+                </optgroup>
+                <optgroup label="Grade 12 STEM">
+                  <option value="Our Lady of Assumption">Our Lady of Assumption</option>
+                  <option value="Our Lady of Immaculate Conception">Our Lady of Immaculate Conception</option>
+                  <option value="Our Lady of Fatima">Our Lady of Fatima</option>
+                  <option value="Our Lady of Guadalupe">Our Lady of Guadalupe</option>
+                  <option value="Our Lady of Lourdes">Our Lady of Lourdes</option>
+                </optgroup>
+                <optgroup label="Grade 12 HUMSS">
+                  <option value="St. John">St. John</option>
+                  <option value="St. Luke">St. Luke</option>
+                </optgroup>
+                <optgroup label="Grade 12 ABM">
+                  <option value="St. Lucy">St. Lucy</option>
+                  <option value="St. Maria Goretti">St. Maria Goretti</option>
+                </optgroup>
+              </Form.Select>
+            </Form.Group>
 
           <Form.Group controlId='formContactNumber'>
             <Form.Label>Contact Number</Form.Label>

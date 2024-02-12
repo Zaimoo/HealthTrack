@@ -1,5 +1,5 @@
 export const DB_NAME = 'StudentDB';
-export const DB_VERSION = 6;
+export const DB_VERSION = 8
 export const STORE_NAME = 'students';
 export const VISITS_STORE_NAME = 'visits';
 

@@ -27,6 +27,29 @@ text-align: center;
 width: 100%; 
 }
 
+.monthly-report {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  
+  }
+  
+  .monthly-report-container {
+    flex-basis: 1500px;
+    height: auto;
+    background-color: #f5f4f4;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .monthly-report-header {
+    padding-left: 20px;
+  }
+  
+
 
 .symptoms-graph {
 display: block;
@@ -49,6 +72,8 @@ align-items: center;
 .symptoms-graph-header {
   padding-left: 20px;
 }
+
+
 
   .recent-visits-header {
     display: flex;

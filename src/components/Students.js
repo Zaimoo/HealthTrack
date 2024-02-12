@@ -30,6 +30,10 @@ function Students() {
         Header: 'Strand',
         accessor: 'strand',
       },
+      {
+        Header: 'Section',
+        accessor: 'section',
+      },
     ],
     []
   );

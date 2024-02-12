@@ -32,6 +32,8 @@ const SignInModal = ({ modalIsOpen, closeModal }) => {
           firstName: student.firstName,
           lastName: student.lastName,
           strand: student.strand,
+          grade: student.gradeLevel,
+          section: student.section,
           symptoms: symptoms,
           visitDate: new Date(Date.now()).toLocaleString("en-US", {
             year: "numeric",
