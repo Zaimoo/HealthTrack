@@ -48,8 +48,10 @@ width: 100%;
   .monthly-report-header {
     padding-left: 20px;
   }
-  
 
+  .filter-dropdown {
+    margin: 1rem 0;
+  }
 
 .symptoms-graph {
 display: block;

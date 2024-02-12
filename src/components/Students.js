@@ -31,8 +31,11 @@ function Students() {
         accessor: 'strand',
       },
       {
-        Header: 'Section',
-        accessor: 'section',
+        Header: 'Grade & Section',
+        accessor: 'gradeSection',
+        Cell: ({ row }) => {
+          return `${row.original.gradeLevel} - ${row.original.section}`;
+        },
       },
     ],
     []

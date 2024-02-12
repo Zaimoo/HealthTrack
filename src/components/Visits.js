@@ -93,6 +93,13 @@ function Visits() {
             accessor: 'strand',
           },
           {
+            Header: 'Grade & Section',
+            accessor: 'gradeSection',
+            Cell: ({ row }) => {
+              return `${row.original.grade} - ${row.original.section}`;
+            },
+          },
+          {
             Header: 'Symptoms',
             accessor: 'symptoms',
             Cell: ({ value }) => {

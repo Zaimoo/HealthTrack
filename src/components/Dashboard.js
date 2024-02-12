@@ -208,7 +208,6 @@ const Dashboard = () => {
                 <XAxis dataKey="name" type="category" height={100} angle={-30} tick={{fontSize: 13}} textAnchor="end" />
                 <YAxis dataKey="value" fill="#8884d8"/>
                 <Tooltip />
-                <Legend />
                 <Bar dataKey="value" fill='#8884d8'/>
               </BarChart>
               </ResponsiveContainer>
