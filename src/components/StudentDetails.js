@@ -81,8 +81,9 @@ useEffect(() => {
                 day: 'numeric',
             })}</p>
                 <p><strong>Gender:</strong> {student.gender}</p>
-                <p><strong>Grade Level:</strong> {student.gradeLevel}</p>
                 <p><strong>Strand:</strong> {student.strand}</p>
+                <p><strong>Grade Level:</strong> {student.gradeLevel}</p>
+                <p><strong>Section:</strong> {student.section}</p>
                 <p><strong>Contact Number:</strong> {student.contactNumber}</p>
             </div>  
         </div>
