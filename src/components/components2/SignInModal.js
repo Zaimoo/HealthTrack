@@ -20,6 +20,7 @@ const symptomsOptions = [
 const SignInModal = ({ modalIsOpen, closeModal }) => {
   const [idNumber, setIdNumber] = useState('');
   const [symptoms, setSymptoms] = useState([]);
+  const [treatments, setTreatments] = useState([]); 
 
   const submit = async () => {
     try {
@@ -43,6 +44,7 @@ const SignInModal = ({ modalIsOpen, closeModal }) => {
             minute: "numeric",
             second: "numeric"
           }),
+          treatments: treatments,
         };
 
         await saveVisitToDB(db, visit);
@@ -113,6 +115,43 @@ const SignInModal = ({ modalIsOpen, closeModal }) => {
               Add Symptom
             </Button>
           </Form.Group>
+
+          <Form.Group controlId="formTreatments" className="mb-2">
+            <Form.Label>Treatments:</Form.Label>
+            {treatments.map((treatment, index) => (
+              <div key={index} className="d-flex mb-2">
+                <Form.Control
+                  type="text"
+                  placeholder="Enter the treatment"
+                  value={treatment}
+                  onChange={(e) => {
+                    const updatedTreatments = [...treatments];
+                    updatedTreatments[index] = e.target.value;
+                    setTreatments(updatedTreatments);
+                  }}
+                />
+                <Button
+                  variant="outline-danger"
+                  className="ml-2"
+                  onClick={() => {
+                    const updatedTreatments = [...treatments];
+                    updatedTreatments.splice(index, 1);
+                    setTreatments(updatedTreatments);
+                  }}
+                >
+                  Remove
+                </Button>
+              </div>
+            ))}
+            <br />
+            <Button
+              variant="outline-primary"
+              onClick={() => setTreatments([...treatments, ""])}
+            >
+              Add Treatment
+            </Button>
+          </Form.Group>
+
         </Form>
       </Modal.Body>
 

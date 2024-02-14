@@ -107,6 +107,13 @@ function Visits() {
             },
           },
           {
+            Header: 'Treatments',
+            accessor: 'treatments',
+            Cell: ({ value }) => {
+              return value ? value.join(', ') : '';
+            }
+          },
+          {
             Header: 'Visit Date',
             accessor: 'visitDate',
           },

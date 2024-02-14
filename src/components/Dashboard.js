@@ -46,7 +46,6 @@ const Dashboard = () => {
   const generateSectionsData = (visits, selectedMonth) => {
     const sectionsCount = {};
     
-    // List of all sections
     const allSections = [
       "St. Augustine", "St. Dominic", "St. Ignatius of Loyola",
       "St. John Vianney", "St. Matthew", "St. Paul",
@@ -75,8 +74,6 @@ const Dashboard = () => {
   
     return sectionsData;
   };
-  
-  
 
   const sectionsData = generateSectionsData(visits, selectedMonth);
 
@@ -130,6 +127,13 @@ const Dashboard = () => {
         Cell: ({ value }) => {
           return value ? value.join(', ') : '';
         },
+      },
+      {
+        Header: 'Treatments',
+        accessor: 'treatments',
+        Cell: ({ value }) => {
+          return value ? value.join(', ') : '';
+        }
       },
       {
         Header: 'Visit Date',
@@ -205,7 +209,7 @@ const Dashboard = () => {
               <ResponsiveContainer width="95%" height={400} margin={{ left: 50, right: 50 }}>
               <BarChart width={730} height={250} data={sectionsData}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" type="category" height={100} angle={-30} tick={{fontSize: 13}} textAnchor="end" />
+                <XAxis dataKey="name" type="category" height={100} angle={-30} tick={{fontSize: 13}} textAnchor="end" allowDecimals="false" />
                 <YAxis dataKey="value" fill="#8884d8"/>
                 <Tooltip />
                 <Bar dataKey="value" fill='#8884d8'/>

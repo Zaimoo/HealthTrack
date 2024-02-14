@@ -98,6 +98,8 @@ useEffect(() => {
                 <div className='visit-history'>
                     <h4>{visit.visitDate}</h4>
                     <span>Symptoms: {visit.symptoms.join(', ')}</span>
+                    <br></br>
+                    <span>Treatments: {visit.treatments.join(', ')}</span>
                 </div>
                 )
             })}
